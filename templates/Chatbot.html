@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation Chat</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Pixelify Sans', sans-serif;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://i.redd.it/lhnvupvps4h91.gif);
+            background-color: grey;
+            /* background-position: center center; */
+            background-size: fill;
+            background-repeat: no-repeat;
+            /* position: relative; */
+            height: 100%;
+            /* background-position: center;
+            background-attachment: fixed; */
+
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 60px;
+            color: #f8e1e8;
+            z-index: 999;
+            position: relative;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(2px);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .conversation {
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 75%;
+        }
+
+        .user-message {
+            background-color: #f8e1e8;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .bot-message {
+            background-color: #c55059;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bomma {
+            width: 220px;
+            z-index: 30;
+            position: relative;
+            /* margin-left: 45%; */
+
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f8e1e8;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #c55059;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        .box {
+            height: 100%;
+            width: 100%;
+            opacity: 0.69;
+            position: absolute;
+            top: 0;
+            background-color: black;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        .nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <div class="nav">
+        <h1> Detective.</h1>
+        <img class="bomma" src="https://i.ibb.co/5Rd5r6C/666027db005ff6-71409867-Processed.png" alt="">
+    </div>
+
+    <div class="container">
+        <div class="conversation">
+            {% for message in history %}
+            {% if loop.index is odd %}
+            <div class="message user-message">
+                <p>{{ message }}</p>
+            </div>
+            {% else %}
+            <div class="message bot-message">
+                <p>{{ message }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <form action="/aichat" method="post">
+            <textarea name="prompt" rows="4" placeholder="Type your message..."></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+
+</html>

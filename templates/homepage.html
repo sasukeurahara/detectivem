@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Pixelify Sans', sans-serif;
+        }
+
+        body {
+            background-color: black;
+            background-size: cover;
+            background-position: center;
+            height: 2900px;
+        }
+
+        .main {
+            background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/f481c7193984031.65f468d9a0b5d.gif);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 2900px;
+            position: relative;
+            background-attachment: fixed;
+        }
+
+        .main .box {
+            height: 2900px;
+            width: 100%;
+            opacity: 0.69;
+            position: absolute;
+            top: 0;
+            background-color: black;
+        }
+
+        .items {
+            display: flex;
+            gap: 180px;
+            position: sticky;
+            z-index: 10;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav button {
+            position: relative;
+            z-index: 10;
+        }
+
+        nav {
+            max-width: 80vw;
+            justify-content: center;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            height: 65px;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+
+        .btn {
+            padding: 3px 8px;
+            font-weight: 400;
+            color: white;
+            background-color: rgba(248, 243, 243, 0.021);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 23px;
+        }
+
+        .btn-sm {
+            background-color: rgb(198, 0, 198);
+            color: white;
+        }
+
+        #first img {
+            width: 300px;
+            position: relative;
+            z-index: 10;
+        }
+
+        #first {
+            font-family: 'Martel Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            position: relative;
+            gap: 23px;
+            padding: 0 30px;
+        }
+
+        #first> :nth-child(4) {
+            font-family: 'Pixelify Sans', sans-serif;
+            font-weight: bolder;
+            font-size: 70px;
+            text-align: center;
+        }
+
+        #first> :nth-child(2) {
+            font-weight: 400;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        #first> :nth-child(3) {
+            font-weight: 400;
+            font-size: 50px;
+            text-align: center;
+        }
+
+
+        @media screen and (max-width: 1200px) {
+            .items {
+                gap: 120px;
+            }
+
+            nav img {
+                width: 150px;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .items {
+                gap: 90px;
+            }
+
+            nav {
+                max-width: 90vw;
+            }
+
+            #first> :nth-child(4),
+            #first> :nth-child(2),
+            #first> :nth-child(3) {
+                font-size: 30px;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .items {
+                gap: 60px;
+            }
+
+            nav img {
+                width: 120px;
+            }
+
+            .btn {
+                font-size: 18px;
+            }
+
+            #first> :nth-child(4),
+            #first> :nth-child(2),
+            #first> :nth-child(3) {
+                font-size: 25px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .items {
+                gap: 40px;
+            }
+
+            nav img {
+                width: 90px;
+            }
+
+            .btn {
+                font-size: 16px;
+            }
+
+            #first> :nth-child(4),
+            #first> :nth-child(2),
+            #first> :nth-child(3) {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .items {
+                gap: 30px;
+            }
+
+            nav img {
+                width: 70px;
+            }
+
+            .btn {
+                font-size: 14px;
+            }
+
+            #first> :nth-child(4),
+            #first> :nth-child(2),
+            #first> :nth-child(3) {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .drag-area {
+                width: 100%;
+                height: 300px;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .drag-area {
+                width: 100%;
+                height: 250px;
+            }
+
+            .drag-area header {
+                font-size: 25px;
+            }
+
+            .drag-area span {
+                font-size: 20px;
+            }
+
+            .drag-area button {
+                font-size: 18px;
+                padding: 8px 20px;
+            }
+
+            .drag-area .icon {
+                font-size: 80px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            #second {
+                width: 90%;
+                margin-left: 5%;
+                padding: 20px;
+            }
+
+            .one,
+            .two {
+                font-size: 25px;
+            }
+
+            section {
+                flex-direction: column;
+                margin-left: 0;
+            }
+
+            .card {
+                width: 90%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+            .middle {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .middle img {
+                margin-bottom: 20px;
+            }
+
+            .middle .right {
+                margin: 20px 0px 10px 0px;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .drag-area {
+                width: 100%;
+                height: 200px;
+            }
+
+            .drag-area header {
+                font-size: 20px;
+            }
+
+            .drag-area span {
+                font-size: 18px;
+            }
+
+            .drag-area button {
+                font-size: 16px;
+                padding: 6px 15px;
+            }
+
+            .drag-area .icon {
+                font-size: 60px;
+            }
+
+            .btn {
+                font-size: 14px;
+            }
+
+            .btn-sm {
+                font-size: 12px;
+            }
+
+            #second {
+                padding: 10px;
+            }
+
+            .one,
+            .two {
+                font-size: 18px;
+            }
+
+            .middle .right {
+                font-size: 16px;
+            }
+        }
+
+
+        .detec {
+            height: 250px;
+        }
+
+        .file-uploader {
+            margin-top: 50px;
+        }
+
+        /* drag and drop */
+        .drag-area {
+            border: 2px dashed #fff;
+            height: 320px;
+            width: 450px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /* background-image: url(media/ptp.gif);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute; */
+        }
+
+        .drag-area.active {
+            border: 2px solid #fff;
+        }
+
+        .drag-area .icon {
+            font-size: 100px;
+            color: #fff;
+        }
+
+        .drag-area header {
+            font-size: 30px;
+            font-weight: 500;
+            color: white;
+        }
+
+        .drag-area span {
+            font-size: 25px;
+            font-weight: 500;
+            color: #fff;
+            margin: 10px 0 15px 0;
+        }
+
+        .drag-area button {
+            padding: 10px 25px;
+            font-size: 20px;
+            font-weight: 500;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px dashed white;
+            position: relative;
+            /* position: relative;
+    margin-left: 9px;
+    margin-top: 124px;
+    font-weight: 600;
+    font-size: 23px; */
+        }
+
+        .drag-area img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .icon {
+            margin-bottom: 20px;
+        }
+
+        #second {
+            z-index: 10;
+            position: relative;
+            padding-top: 200px;
+            margin-left: 15%;
+        }
+
+        /* glowing */
+        .glowing {
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px white;
+            }
+
+            to {
+                box-shadow: 0 0 25px white;
+            }
+        }
+
+        /* Animations for the #first children */
+        .animate-from-left {
+            position: relative;
+            animation: slideInFromLeft 2.5s forwards;
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                left: -100%;
+            }
+
+            to {
+                left: 0;
+            }
+        }
+
+        .animate-from-right {
+            position: relative;
+            animation: slideInFromRight 2.5s forwards;
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                right: -100%;
+            }
+
+            to {
+                right: 0;
+            }
+        }
+
+
+        #first> :nth-child(4) {
+            position: relative;
+            opacity: 0;
+            /* Initially hide the fourth child */
+            animation: popUp 1s forwards;
+            animation-delay: 2.5s;
+            /* Adjusted delay to start after the second and third children animations (2.5s + 2s) */
+            z-index: 20;
+            /* High z-index during the animation */
+        }
+
+        @keyframes popUp {
+            from {
+                transform: scale(0);
+                opacity: 0;
+                /* Start with opacity 0 */
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+                /* Change opacity to 1 at the end of animation */
+                visibility: visible;
+                /* Ensure visibility is set to visible during the animation */
+            }
+        }
+
+        #second {
+
+            margin-top: 100px;
+            color: white;
+            position: relative;
+            width: 800px;
+            height: 580px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(2px);
+            color: #fff;
+            border-radius: 12px;
+            padding: 30px 40px;
+            margin-left: 21%;
+        }
+
+        .one,
+        .two {
+            font-size: 33px;
+        }
+
+        .separation {
+            height: 5px;
+            background-color: grey;
+            margin-top: 80px;
+        }
+
+        /* #third .one {
+    width: 70vw;
+    margin-left: 15%;
+    font-size: 30px;
+}
+
+#third .two {
+    width: 70vw;
+    margin-left: 15%;
+    font-size: 30px;
+    margin-top: 30px;
+} */
+        /* .input{
+
+    height: 1100px;
+    
+} */
+
+        #third {
+            display: flex;
+            flex-wrap: wrap;
+            font-family: 'Martel Sans', sans-serif;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            position: relative;
+            gap: 23px;
+            padding: 0 30px;
+            height: 750px;
+        }
+
+
+        section {
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+            margin-left: 3.2vw;
+        }
+
+        .card {
+            position: relative;
+            width: 450px;
+            height: 300px;
+            backdrop-filter: blur(25px);
+            background: rgba(255, 255, 255, 0.01);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            font-weight: 300;
+            color: white;
+        }
+
+        .top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #d5cccc24;
+        }
+
+        .top span {
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .top i {
+            font-size: 30px;
+            padding: 10px;
+            border-radius: 30%;
+        }
+
+        .top i:hover {
+            background: rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .top p {
+            position: absolute;
+            top: 50px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 10px 20px;
+            border-radius: 10px;
+            opacity: 0;
+            transition: .5s ease-in-out;
+        }
+
+        .top i:hover~p {
+            opacity: 1;
+            transition: .5s ease-in-out;
+        }
+
+        .middle {
+            display: flex;
+            flex-direction: row;
+            padding: 20px 30px 0px 30px;
+        }
+
+        .middle img {
+            width: 170px;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            outline: 3px dashed rgba(255, 255, 255, 0.25);
+        }
+
+        .middle .right {
+            margin: 20px 0px 10px 50px;
+            font-size: 20px;
+        }
+
+        .right label {
+            font-weight: bolder;
+            color: mediumseagreen;
+        }
+
+        ul li {
+            list-style-type: disc
+        }
+
+        .social-icon {
+            display: flex;
+            flex-direction: row;
+            margin-top: inherit;
+        }
+
+        .social-icon span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            margin: 0 5px;
+            transition: .4s;
+            cursor: pointer;
+        }
+
+        .social-icon i {
+            font-size: 20px;
+
+        }
+
+        .social-icon span:hover {
+            color: #3c79db;
+            background: #fff;
+            transform: translateY(-4px);
+            box-shadow: inset 0 0 0 15px #fff;
+        }
+
+        .bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            padding: 0 30px;
+        }
+
+        section .btn {
+            background: #3c79db;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 20px;
+            border: none;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        section .btn:hover {
+            box-shadow: inset 0 0 0 20px #83ace2;
+        }
+
+        #fourth {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="main">
+        <nav>
+            <div class="items">
+                <button id="homeButton" class="btn"><a href="#first">Home</a></button>
+                <button id="aboutButton" class="btn"><a href="#second">About Product</a></button>
+                <button id="productButton" class="btn"><a href="#third">Product</a></button>
+                <button id="aboutusButton" class="btn"><a href="#fourth">About Us</a></button>
+                <button id="chatbotButton" class="btn"><a href="/aichat">chatbot</a></button>
+            </div>
+        </nav>
+
+        <div class="box"></div>
+
+        <div id="first">
+            <span class="detec"><img width="45" src="https://i.ibb.co/5Rd5r6C/666027db005ff6-71409867-Processed.png"></span>
+            <span class="animate-from-left">Hello! I'm Ware,</span>
+            <span class="animate-from-right">Detective Malware. Nice to meet you!</span>
+            <span>Let DETECTIVE-M FIND HIS SUSPECT- MALWARE!</span>
+        </div>
+        <div id="second">
+            <div class="text">
+                <div class="one">
+                    Detective M is a state-of-the-art malware detection software that uses image classification in deep
+                    learning to accurately identify malicious files. By converting data into visual formats, our
+                    advanced neural networks can detect threats that traditional methods often miss.
+                </div>
+                <div class="two">
+                    Rely on Detective M for precise predictions and strong protection. Our constantly evolving solution
+                    learns from new data to stay ahead of emerging threats, keeping your system secure. With Detective
+                    M, you benefit from the latest in AI-driven cybersecurity, ensuring your digital environment is safe
+                    from cyberattacks.
+                </div>
+            </div>
+        </div>
+
+        <div id="third">
+            <div class="drag-area">
+                <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <header>Drag & Drop to Upload File</header>
+                <span>OR</span>
+                <button>Browse File</button>
+                <input type="file" hidden>
+            </div>
+            <div id="result"></div>
+        </div>
+
+        <div id="fourth" class="fourth">
+            <section>
+
+                <div class="card">
+                    <div class="top">
+                        <span>Sreedweep</span>
+                        <p>My Portfolio</p>
+                    </div>
+                    <div class="middle">
+                        <div class="left">
+                            <img src="https://avatars.githubusercontent.com/u/128579274?v=4" alt="">
+                        </div>
+                        <div class="right">
+                            <label for="">Skills:</label>
+                            <div>
+                                <ul>
+                                    <li>Machine Learning</li>
+                                    <li>Artificial Intelligence</li>
+                                    <li>Python</li>
+                                </ul>
+                            </div>
+                            <div class="social-icon">
+                                <span><i class="bx bxl-facebook"></i></span>
+                                <span><i class="bx bxl-linkedin"></i></span>
+                                <span><i class="bx bxl-instagram"></i></span>
+                                <span><i class="bx bxl-github"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <!-- <input type="submit" class="btn" value="Hire"> -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="top">
+                        <span>Soumya Dwivedi</span>
+                        <p>My Portfolio</p>
+                    </div>
+                    <div class="middle">
+                        <div class="left">
+                            <img src="https://media.licdn.com/dms/image/D5603AQGaG-C-0pGloA/profile-displayphoto-shrink_400_400/0/1713682056293?e=1723680000&v=beta&t=Wf25XJgc3zmldAaP5xvLuP5ygturezkhaz4K93MGJ-I" alt="">
+                        </div>
+                        <div class="right">
+                            <label for="">Skills:</label>
+                            <div>
+                                <ul>
+                                    <li>Web Designer</li>
+                                    <li>Backend Development</li>
+                                    <li>Graphic Designer</li>
+                                </ul>
+                            </div>
+                            <div class="social-icon">
+                                <span><i class="bx bxl-facebook"></i></span>
+                                <span><i class="bx bxl-linkedin"></i></span>
+                                <span><i class="bx bxl-instagram"></i></span>
+                                <span><i class="bx bxl-github"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <!-- <input type="submit" class="btn" value="Hire"> -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="top">
+                        <span>Bhanu Prasad</span>
+                        <p>My Portfolio</p>
+                    </div>
+                    <div class="middle">
+                        <div class="left">
+                            <img src="https://media.licdn.com/dms/image/D4E03AQHrRc5cpQVT7A/profile-displayphoto-shrink_400_400/0/1699166920746?e=1723680000&v=beta&t=PKYUx6TfupcJ70RfsdDN_lVrbzF3fMJyjqRC-5u66H4" alt="">
+                        </div>
+                        <div class="right">
+                            <label for="">Skills:</label>
+                            <div>
+                                <ul>
+                                    <li>Frontend Development</li>
+                                    <li>Machine Learning</li>
+                                    <li>Python</li>
+                                </ul>
+                            </div>
+                            <div class="social-icon">
+                                <span><i class="bx bxl-facebook"></i></span>
+                                <span><i class="bx bxl-linkedin"></i></span>
+                                <span><i class="bx bxl-instagram"></i></span>
+                                <span><i class="bx bxl-github"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <!-- <input type="submit" class="btn" value="Hire"> -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="homepage.js"></script>
+    <script src="https://kit.fontawesome.com/7852632660.js" crossorigin="anonymous"></script>
+</body>
+<script>
+    // drag and drop 
+
+    // scripts.js
+    const dropArea = document.querySelector(".drag-area"),
+        dragText = dropArea.querySelector("header"),
+        button = dropArea.querySelector("button"),
+        input = dropArea.querySelector("input"),
+        resultDiv = document.getElementById("result");
+
+    button.onclick = () => {
+        input.click();
+    }
+
+    input.addEventListener("change", function () {
+        file = this.files[0];
+        dropArea.classList.add("active");
+        showFile();
+        uploadFile(file);
+    });
+
+    dropArea.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        dropArea.classList.add("active");
+        dragText.textContent = "Release to Upload File";
+    });
+
+    dropArea.addEventListener("dragleave", () => {
+        dropArea.classList.remove("active");
+        dragText.textContent = "Drag & Drop to Upload File";
+    });
+
+    dropArea.addEventListener("drop", (event) => {
+        event.preventDefault();
+        file = event.dataTransfer.files[0];
+        dropArea.classList.add("active");
+        showFile();
+        uploadFile(file);
+    });
+
+    function showFile() {
+        let fileReader = new FileReader();
+        fileReader.onload = () => {
+            let fileURL = fileReader.result;
+            let fileTag = <p>${file.name}</p>;
+            dropArea.innerHTML = fileTag;
+        }
+        fileReader.readAsDataURL(file);
+    }
+
+    function uploadFile(file) {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        fetch('/predict', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            resultDiv.innerHTML = <p>Prediction: ${data.result}</p>;
+        })
+        .catch(error => {
+            resultDiv.innerHTML = <p>Error: ${error}</p>;
+        });
+    }
+
+    // glowing
+    document.addEventListener('DOMContentLoaded', function () {
+        var homeSection = document.getElementById('first');
+        var aboutSection = document.getElementById('second');
+        var productSection = document.getElementById('third');
+        var aboutusSection = document.getElementById('fourth');
+        var homeButton = document.getElementById('homeButton');
+        var aboutButton = document.getElementById('aboutButton');
+        var productButton = document.getElementById('productButton');
+        var aboutusButton = document.getElementById('aboutusButton');
+        var activeButton = null;
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top < window.innerHeight && rect.bottom >= 0
+            );
+        }
+
+        function toggleGlowing(button, section) {
+            if (isElementInViewport(section)) {
+                if (activeButton && activeButton !== button) {
+                    activeButton.classList.remove('glowing');
+                }
+                button.classList.add('glowing');
+                activeButton = button;
+            }
+        }
+
+        homeButton.addEventListener('click', function () {
+            if (activeButton !== homeButton) {
+                if (activeButton) {
+                    activeButton.classList.remove('glowing');
+                }
+                homeButton.classList.add('glowing');
+                activeButton = homeButton;
+                homeSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        aboutButton.addEventListener('click', function () {
+            if (activeButton !== aboutButton) {
+                if (activeButton) {
+                    activeButton.classList.remove('glowing');
+                }
+                aboutButton.classList.add('glowing');
+                activeButton = aboutButton;
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        productButton.addEventListener('click', function () {
+            if (activeButton !== productButton) {
+                if (activeButton) {
+                    activeButton.classList.remove('glowing');
+                }
+                productButton.classList.add('glowing');
+                activeButton = productButton;
+                productSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        aboutusButton.addEventListener('click', function () {
+            if (activeButton !== aboutusButton) {
+                if (activeButton) {
+                    activeButton.classList.remove('glowing');
+                }
+                aboutusButton.classList.add('glowing');
+                activeButton = aboutusButton;
+                aboutusSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        window.addEventListener('scroll', function () {
+            if (isElementInViewport(homeSection)) {
+                toggleGlowing(homeButton, homeSection);
+            } else if (isElementInViewport(aboutSection)) {
+                toggleGlowing(aboutButton, aboutSection);
+            } else if (isElementInViewport(productSection)) {
+                toggleGlowing(productButton, productSection);
+            } else if (isElementInViewport(aboutusSection)) {
+                toggleGlowing(aboutusButton, aboutusSection);
+            } else if (activeButton) {
+                activeButton.classList.remove('glowing');
+                activeButton = null;
+            }
+        });
+    });
+</script>
+
+</html>
