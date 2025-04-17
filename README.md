@@ -1,18 +1,141 @@
-🔍 Malware Detection Using Image Classification
-🚀 Project Overview
-Welcome to our malware detection project! This project leverages deep learning and image classification techniques to detect malware. We utilize the VGG16 model to classify virus files. Our dataset is sourced from the theZoo repository, providing a diverse range of real-world malware samples for training.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Malware Detection Using Image Classification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-left: 4px solid #ccc;
+      overflow-x: auto;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .emoji {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
 
-🕵️‍♂️ Meet Detective M
-Say hello to Detective M, our project's digital mascot! Detective M embodies our commitment to uncovering and neutralizing malware threats with sharp investigative skills and a touch of personality.
+  <h1 class="emoji">🔍 Malware Detection Using Image Classification</h1>
 
-🤖 Detective M Chatbot
-We've brought Detective M to life as a chatbot, powered by the Llama3 open-source platform. The chatbot assists users while sharing Detective M's investigative flair.
+  <h2>🚀 Project Overview</h2>
+  <p>
+    Welcome to our malware detection project! This project leverages <strong>deep learning</strong> and 
+    <strong>image classification</strong> techniques to detect malware. We utilize the <strong>VGG16</strong> model 
+    to classify virus files. Our dataset is sourced from the 
+    <a href="https://github.com/ytisf/theZoo" target="_blank">theZoo repository</a>, 
+    providing a diverse range of real-world malware samples for training.
+  </p>
 
-🔧 Data Preprocessing
-Virus files are first converted into binary format, then transformed into images. This step allows us to harness the power of convolutional neural networks for malware detection.
+  <h2>🕵️‍♂️ Meet Detective M</h2>
+  <p>
+    Say hello to <strong>Detective M</strong>, our project's digital mascot! Detective M embodies our commitment 
+    to uncovering and neutralizing malware threats with sharp investigative skills and a touch of personality.
+  </p>
 
-🧠 Model Architecture
-Our model is based on VGG16, a proven CNN architecture in image classification. We've fine-tuned it specifically for malware image classification to achieve optimal results.
+  <h2>🤖 Detective M Chatbot</h2>
+  <p>
+    We've brought Detective M to life as a <strong>chatbot</strong>, powered by the 
+    <strong>Llama3 open-source platform</strong>. The chatbot assists users while sharing Detective M's 
+    investigative flair.
+  </p>
 
-📊 Evaluation
-After training, our model achieved an impressive 93% accuracy on the test dataset, demonstrating the strength of our approach in detecting malware through visual representations.
+  <h2>🔧 Data Preprocessing</h2>
+  <p>
+    Virus files are first converted into binary format, then transformed into images. This step allows us to 
+    harness the power of <strong>convolutional neural networks</strong> for malware detection.
+  </p>
+
+  <h2>🧠 Model Architecture</h2>
+  <p>
+    Our model is based on <strong>VGG16</strong>, a proven CNN architecture in image classification. 
+    We've fine-tuned it specifically for malware image classification to achieve optimal results.
+  </p>
+
+  <h2>📊 Evaluation</h2>
+  <p>
+    After training, our model achieved an impressive <strong>93% accuracy</strong> on the test dataset, 
+    demonstrating the strength of our approach in detecting malware through visual representations.
+  </p>
+
+  <h2>📂 Repository</h2>
+  <p>
+    Explore the full codebase and details here: <a href="#">Repository Link</a> <!-- Replace with actual URL -->
+  </p>
+
+  <h2>👨‍💻 Contributing</h2>
+  <p>We welcome community contributions! You can help by:</p>
+  <ul>
+    <li>Enhancing model accuracy</li>
+    <li>Improving data preprocessing</li>
+    <li>Adding features to the chatbot</li>
+    <li>Reporting bugs and security issues</li>
+  </ul>
+  <p>Check out our <code>CONTRIBUTING.md</code> for guidelines.</p>
+
+  <h2>📜 License</h2>
+  <p>
+    This project is licensed under the <strong>MIT License</strong>. Feel free to use, modify, 
+    and distribute it under the terms of this license.
+  </p>
+
+  <h2>🛠️ Getting Started</h2>
+  <ol>
+    <li><strong>Clone the repository:</strong>
+      <pre><code>git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name</code></pre>
+    </li>
+    <li><strong>Install dependencies:</strong>
+      <pre><code>pip install -r requirements.txt</code></pre>
+    </li>
+    <li><strong>Run the project:</strong>
+      <p>Follow the README instructions to:</p>
+      <ul>
+        <li>Preprocess the data</li>
+        <li>Train the model</li>
+        <li>Deploy the chatbot</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>🛡️ Security</h2>
+  <p>
+    Security is vital in malware detection. If you discover any vulnerabilities, 
+    please report them through GitHub's security features or contact us directly for responsible disclosure.
+  </p>
+
+  <h2>🙏 Acknowledgements</h2>
+  <ul>
+    <li>Thanks to the developers of <a href="https://github.com/ytisf/theZoo" target="_blank">theZoo</a> for the malware dataset.</li>
+    <li>Gratitude to the open-source community for creating the frameworks and tools that power our project.</li>
+  </ul>
+
+  <p><strong>Happy detecting! 🕵️‍♂️🔒🚀</strong></p>
+
+</body>
+</html>
