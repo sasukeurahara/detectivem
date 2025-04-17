@@ -40,10 +40,6 @@
     demonstrating the strength of our approach in detecting malware through visual representations.
   </p>
 
-  <h2>📂 Repository</h2>
-  <p>
-    Explore the full codebase and details here: <a href="#">Repository Link</a> <!-- Replace with actual URL -->
-  </p>
 
   <h2>👨‍💻 Contributing</h2>
   <p>We welcome community contributions! You can help by:</p>
@@ -54,31 +50,6 @@
     <li>Reporting bugs and security issues</li>
   </ul>
   <p>Check out our <code>CONTRIBUTING.md</code> for guidelines.</p>
-
-  <h2>📜 License</h2>
-  <p>
-    This project is licensed under the <strong>MIT License</strong>. Feel free to use, modify, 
-    and distribute it under the terms of this license.
-  </p>
-
-  <h2>🛠️ Getting Started</h2>
-  <ol>
-    <li><strong>Clone the repository:</strong>
-      <pre><code>git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name</code></pre>
-    </li>
-    <li><strong>Install dependencies:</strong>
-      <pre><code>pip install -r requirements.txt</code></pre>
-    </li>
-    <li><strong>Run the project:</strong>
-      <p>Follow the README instructions to:</p>
-      <ul>
-        <li>Preprocess the data</li>
-        <li>Train the model</li>
-        <li>Deploy the chatbot</li>
-      </ul>
-    </li>
-  </ol>
 
   <h2>🛡️ Security</h2>
   <p>
